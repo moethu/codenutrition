@@ -1,6 +1,6 @@
 # Code Nutrition Facts
 
-[![nutrition facts](http://82.165.112.45:5000/badge/O%2B%2B_S%2B%2B_I%2B%2B_C_E_M_V%2B_PS%2B%2B_D%2B)](http://82.165.112.45:5000/facts/O%2B%2B_S%2B%2B_I%2B%2B_C_E_M_V%2B_PS%2B%2B_D%2B)
+[![nutrition facts](http://code.grevit.net/badge/O%2B%2B_S%2B%2B_I%2B%2B_C_E_M_V%2B_PS%2B%2B_D%2B)](http://code.grevit.net/facts/O%2B%2B_S%2B%2B_I%2B%2B_C_E_M_V%2B_PS%2B%2B_D%2B)
 
 **Imagine your code and all dependencies would carry nutrition labels.**
 
@@ -12,7 +12,7 @@ The survey itself is still under development you are welcome to discuss, contrib
 
 Again, the intention of this repo and the survey is to get the conversation started and potentially develop a solid metric representing the state of a project.
 
-[Start your survey now](http://82.165.112.45:5000)
+[Start your survey now](http://code.grevit.net)
 
 ## Requirements for building the service
 
