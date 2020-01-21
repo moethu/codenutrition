@@ -1,0 +1,290 @@
+[{
+        "title": "Ownership, Contingency",
+        "desc" : "What is your code ownership status?",
+        "content": [{
+                "id": "O++",
+                "desc": "Public Domain / MIT / Apache."
+            },
+            {
+                "id": "O+",
+                "desc": "Copyleft."
+            },
+            {
+                "id": "O",
+                "desc": "We own it. But if you go out of business, you get the source code."
+            },
+            {
+                "id": "O-",
+                "desc": "We own it. You get a license but we can revoke at any time."
+            },
+            {
+                "id": "O--",
+                "desc": "We own it. We don't sell it. You can only rent it."
+            },
+            {
+                "id": "!O",
+                "desc": "You use our appliance / cloud service."
+            }
+        ]
+    },
+    {
+        "title": "Source Code",
+        "desc" : "How are you licensing your code?",
+        "content": [{
+                "id": "S++",
+                "desc": "The source code is public and you can change it."
+            },
+            {
+                "id": "S+",
+                "desc": "The source code is public."
+            },
+            {
+                "id": "S",
+                "desc": "The source code leaked a while ago."
+            },
+            {
+                "id": "S-",
+                "desc": "We let your government view the source code."
+            },
+            {
+                "id": "S--",
+                "desc": "The source code is secret."
+            },
+            {
+                "id": "!S",
+                "desc": "We lost the source code."
+            }
+        ]
+    },
+    {
+        "title": "Intent, Confidence",
+        "desc" : "How confident are you about what you are doing?",
+        "content": [{
+                "id": "I+++",
+                "desc": "I make actual guarantees."
+            },
+            {
+                "id": "I++",
+                "desc": "I have done this multiple time before. I know what I'm doing."
+            },
+            {
+                "id": "I+",
+                "desc": "I had to adapt the design a bit over time."
+            },
+            {
+                "id": "I",
+                "desc": "I tried to avoid security bugs while writing this."
+            },
+            {
+                "id": "I-",
+                "desc": "Look, they paid me to do this."
+            },
+            {
+                "id": "I--",
+                "desc": "The guy left. Code now maintained by a team in India."
+            },
+            {
+                "id": "!I",
+                "desc": "I have no idea what I'm doing."
+            }
+        ]
+    },
+    {
+        "title": "Correctness",
+        "desc" : "How do you verify correctness?",
+        "content": [{
+                "id": "C+++",
+                "desc": "We have a correctness proof and you can unsertand / verify it."
+            },
+            {
+                "id": "C++",
+                "desc": "We have a correctness proof."
+            },
+            {
+                "id": "C+",
+                "desc": "No open bugs, 100% test coverage and we do regular code audits."
+            },
+            {
+                "id": "C",
+                "desc": "We try to fix bugs that our users tell us about."
+            },
+            {
+                "id": "C-",
+                "desc": "We have a bug backlog."
+            },
+            {
+                "id": "C--",
+                "desc": "At some point we are planning to have a bug tracking system."
+            },
+            {
+                "id": "!C",
+                "desc": "That's not really a bug, that's a crash!"
+            }
+        ]
+    },
+    {
+        "title": "Engineering, Design",
+        "desc" : "How are you engineering workflows?",
+        "content": [{
+                "id": "E+++",
+                "desc": "Least Privilege, Privilege separation, TCB minimized."
+            },
+            {
+                "id": "E++",
+                "desc": "We sandbox ourselves away so nothing bad can happen."
+            },
+            {
+                "id": "E",
+                "desc": "we try to detect bad arguments."
+            },
+            {
+                "id": "E-",
+                "desc": "Well... we fix bugs. That's good, right?"
+            },
+            {
+                "id": "E--",
+                "desc": "We just do what we are told. You call us wrong, that's on you!"
+            },
+            {
+                "id": "E---",
+                "desc": "We run as root / in the kernel."
+            },
+            {
+                "id": "E----",
+                "desc": "We sell it as an appliance so you don't see how bad it is."
+            },
+            {
+                "id": "!E",
+                "desc": "We do a daily AI malware scan of our blockchain."
+            }
+        ]
+    },
+    {
+        "title": "Maintainance",
+        "desc" : "How do you maintain your code?",
+        "content": [{
+                "id": "M!",
+                "desc": "Author is Don Knuth / Dan Bernstein, makes no mistakes."
+            },
+            {
+                "id": "M+",
+                "desc": "Project is feature-complete, gets occasional security updates."
+            },
+            {
+                "id": "M",
+                "desc": "Project gets updated regularly."
+            },
+            {
+                "id": "M-",
+                "desc": "People send pull requests / patches to mailing list."
+            },
+            {
+                "id": "M--",
+                "desc": "Vendor publishes quarterly patch roundup with 512 fixes each."
+            },
+            {
+                "id": "M---",
+                "desc": "Author killed project. Unofficial forks / backups still around."
+            },
+            {
+                "id": "!M",
+                "desc": "Author left / passed away, project abandoned."
+            }
+        ]
+    },
+    {
+        "title": "Volatility",
+        "desc" : "How are you handling changes or support?",
+        "content": [{
+                "id": "V!",
+                "desc": "Software is perfect, needed no updates since 1993."
+            },
+            {
+                "id": "V++",
+                "desc": "Regular patches and updates with notifications but you can't tell the difference."
+            },
+            {
+                "id": "V+",
+                "desc": "Regular patches and updates but you can't tell the difference."
+            },
+            {
+                "id": "V-",
+                "desc": "Updating is such a hassle that packporting patches is a thing."
+            },
+            {
+                "id": "V--",
+                "desc": "The new version broke so much, most people use the old one."
+            },
+            {
+                "id": "V---",
+                "desc": "Agile. 5 updates/day, half of them break the product."
+            },
+            {
+                "id": "!V",
+                "desc": "Support ended."
+            }
+        ]
+    },
+    {
+        "title": "Protocol / Spec",
+        "desc" : "What status is your spec in?",
+        "content": [{
+                "id": "PS++",
+                "desc": "The spec is public, short and precise."
+            },
+            {
+                "id": "PS",
+                "desc": "The spec is OK but interoperability is a bitch."
+            },
+            {
+                "id": "PS-",
+                "desc": "The spec is so large, nobody implements all of it."
+            },
+            {
+                "id": "PS--",
+                "desc": "The spec cannot be implemented securely."
+            },
+            {
+                "id": "PS---",
+                "desc": "There is a spec but it's paywalled."
+            },
+            {
+                "id": "!PS",
+                "desc": "The author made it up as he went."
+            }
+        ]
+    },
+    {
+        "title": "Dependencies",
+        "desc" : "What are your dependencies and how are you handling them?",
+        "content": [{
+                "id": "!D",
+                "desc": "No dependencies. You boot our image directly."
+            },
+            {
+                "id": "D++",
+                "desc": "We depend only on things that come with the system."
+            },
+            {
+                "id": "D+",
+                "desc": "We depend on sqlite and libz."
+            },
+            {
+                "id": "D",
+                "desc": "We use somebody's Docker image from the internet."
+            },
+            {
+                "id": "D-",
+                "desc": "We don't even have a list of dependencies."
+            },
+            {
+                "id": "D--",
+                "desc": "We load extensions dynamically from the internet."
+            },
+            {
+                "id": "D---",
+                "desc": "Uses vendor specific lock-in APIs/feautres."
+            }
+        ]
+    }
+]

@@ -1,0 +1,55 @@
+basePath: '{{.BasePath}}'
+host: '{{.Host}}'
+info:
+  contact: {}
+  description: renders form to generate code string
+  license: {}
+  title: '{{.Title}}'
+  version: '{{.Version}}'
+paths:
+  /:
+    get:
+      description: renders form to generate code string
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: html
+      summary: renders form
+  /badge/{code}:
+    get:
+      description: renders badge image as png from code parameter string
+      parameters:
+      - description: Code String
+        in: path
+        name: code
+        required: true
+        type: string
+      produces:
+      - image/png
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: renders badge image
+  /facts/{code}:
+    get:
+      description: renders facts page using code parameter string
+      parameters:
+      - description: Code String
+        in: path
+        name: code
+        required: true
+        type: string
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: html
+      summary: renders facts page
+swagger: "2.0"

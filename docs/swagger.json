@@ -1,0 +1,83 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "renders form to generate code string",
+        "title": "{{.Title}}",
+        "contact": {},
+        "license": {},
+        "version": "{{.Version}}"
+    },
+    "host": "{{.Host}}",
+    "basePath": "{{.BasePath}}",
+    "paths": {
+        "/": {
+            "get": {
+                "description": "renders form to generate code string",
+                "produces": [
+                    "text/html"
+                ],
+                "summary": "renders form",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "html"
+                        }
+                    }
+                }
+            }
+        },
+        "/badge/{code}": {
+            "get": {
+                "description": "renders badge image as png from code parameter string",
+                "produces": [
+                    "image/png"
+                ],
+                "summary": "renders badge image",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Code String",
+                        "name": "code",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/facts/{code}": {
+            "get": {
+                "description": "renders facts page using code parameter string",
+                "produces": [
+                    "text/html"
+                ],
+                "summary": "renders facts page",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Code String",
+                        "name": "code",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "html"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
