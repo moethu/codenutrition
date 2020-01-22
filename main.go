@@ -39,7 +39,7 @@ func main() {
 	log.SetFlags(0)
 
 	router := gin.Default()
-	port := ":5000"
+	port := ":80"
 	srv := &http.Server{
 		Addr:         port,
 		Handler:      router,
