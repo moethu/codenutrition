@@ -1,1 +1,1 @@
-http://localhost:8000/badge/O%2B_S++_I!_C--_E---_M--_V-_PS---_D-
+http://localhost:80/badge/O%2B_S++_I!_C--_E---_M--_V-_PS---_D-
