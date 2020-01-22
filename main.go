@@ -18,6 +18,7 @@ import (
 	"github.com/moethu/codenutrition/docs"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
+	"github.com/thinkerou/favicon"
 )
 
 // operatingDir current binary dir
@@ -46,6 +47,7 @@ func main() {
 		WriteTimeout: 600 * time.Second,
 	}
 
+	router.Use(favicon.New("./static/favicon.ico"))
 	router.Static("/static/", "./static/")
 	router.GET("/", getHome)
 	router.GET("/imprint", getImprint)

@@ -6,4 +6,5 @@ require (
 	github.com/llgcode/draw2d v0.0.0-20200110163050-b96d8208fcfc
 	github.com/swaggo/gin-swagger v1.2.0
 	github.com/swaggo/swag v1.6.5
+	github.com/thinkerou/favicon v0.1.0
 )
