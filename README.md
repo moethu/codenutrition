@@ -1,6 +1,6 @@
 # Code Nutrition
 
-[![codenutrition](http://code.grevit.net/badge/O%2B%2B_S%2B%2B_I%2B%2B_C_E_M_V%2B_PS%2B%2B_D%2B)](http://code.grevit.net/facts/O%2B%2B_S%2B%2B_I%2B%2B_C_E_M_V%2B_PS%2B%2B_D%2B)
+[![codenutrition](http://code.grevit.net/badge/O%2B%2B_S%2B%2B_I%2B%2B_C_E_M_V%2B_PS%2B%2B_D%2B_)](http://code.grevit.net/facts/O%2B%2B_S%2B%2B_I%2B%2B_C_E_M_V%2B_PS%2B%2B_D%2B)
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/moethu/codenutrition)](https://goreportcard.com/report/github.com/moethu/codenutrition)
 
