@@ -132,8 +132,8 @@ func getFacts(c *gin.Context) {
 func getBadge(c *gin.Context) {
 	codelabel := escapedParam(c, "code")
 	segments := strings.Split(codelabel, "_")
-	image := createBadge(segments)
-	c.Writer.Header().Set("Content-Type", "image/png")
+	image := getSVG(segments)
+	c.Writer.Header().Set("Content-Type", "image/svg+xml")
 	c.Writer.Header().Set("Content-Length", strconv.Itoa(len(image)))
 	if _, err := c.Writer.Write(image); err != nil {
 		log.Println(err)
