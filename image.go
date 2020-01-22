@@ -34,19 +34,19 @@ func getColor(code string) (color.RGBA, color.RGBA) {
 }
 
 // roundRect renders a filled rounded rectangle (badge)
-func roundRect(path *draw2dimg.GraphicContext, x1, y1, x2, y2, arcWidth, arcHeight float64, color color.RGBA) {
+func roundRect(path *draw2dimg.GraphicContext, x1, y1, x2, y2, arcLeft, arcRight float64, color color.RGBA) {
 	path.SetFillColor(color)
 	path.BeginPath()
-	arcWidth = arcWidth / 2
-	arcHeight = arcHeight / 2
-	path.MoveTo(x1, y1+arcHeight)
-	path.QuadCurveTo(x1, y1, x1+arcWidth, y1)
-	path.LineTo(x2-arcWidth, y1)
-	path.QuadCurveTo(x2, y1, x2, y1+arcHeight)
-	path.LineTo(x2, y2-arcHeight)
-	path.QuadCurveTo(x2, y2, x2-arcWidth, y2)
-	path.LineTo(x1+arcWidth, y2)
-	path.QuadCurveTo(x1, y2, x1, y2-arcHeight)
+	arcLeft = arcLeft / 2
+	arcRight = arcRight / 2
+	path.MoveTo(x1, y1+arcLeft)
+	path.QuadCurveTo(x1, y1, x1+arcLeft, y1)
+	path.LineTo(x2-arcRight, y1)
+	path.QuadCurveTo(x2, y1, x2, y1+arcRight)
+	path.LineTo(x2, y2-arcRight)
+	path.QuadCurveTo(x2, y2, x2-arcRight, y2)
+	path.LineTo(x1+arcLeft, y2)
+	path.QuadCurveTo(x1, y2, x1, y2-arcLeft)
 	path.Close()
 	path.Fill()
 }
@@ -61,27 +61,41 @@ func writeString(gc *draw2dimg.GraphicContext, text string, fontsize, x, y float
 	return width
 }
 
+// renderSegment renders a badge segment
+func renderSegment(gc *draw2dimg.GraphicContext, text string, x, top, bottom, rLeft, rRight, fontsize, offset, baseline float64) float64 {
+	bgcol, fgcol := getColor(text)
+	textWidth := writeString(gc, text, fontsize, float64(x)+offset, baseline, fgcol)
+	roundRect(gc, float64(x), top, float64(x)+textWidth+(2*offset), bottom, rLeft, rRight, bgcol)
+	writeString(gc, text, fontsize, float64(x)+offset, baseline, fgcol)
+	return textWidth + (2 * offset)
+}
+
 // createBadge creates a badge image from an array of code values
 func createBadge(code []string) []byte {
 	img := image.NewRGBA(image.Rect(0, 0, 300, 20))
 	gc := draw2dimg.NewGraphicContext(img)
 
-	spacing := 2.0      // spacing in between badges
+	spacing := 1.0      // spacing in between badges
 	x := spacing        // initial x offset
-	offset := 2.0       // text offset in badge
-	radius := 4.0       // corner radius
+	offset := 3.0       // text offset in badge
+	radiusLeft := 0.0   // corner radius
+	radiusRight := 0.0  // corner radius
 	baseline := 14.0    // text baseline
 	fontsize := 10.0    // fontsize
 	badgeTop := 1.0     // badge top y
 	badgeBottom := 18.0 // badge bottom y
+	radius := 6.0
 
-	for _, segment := range code {
+	width := renderSegment(gc, " codenutrition ", x, badgeTop, badgeBottom, radius, radiusRight, fontsize, offset, baseline)
+	x = x + width + spacing
+
+	for i, segment := range code {
 		if len(segment) > 0 {
-			bgcol, fgcol := getColor(segment)
-			textWidth := writeString(gc, segment, fontsize, float64(x)+offset, baseline, fgcol)
-			roundRect(gc, float64(x), badgeTop, float64(x)+textWidth+(2*offset), badgeBottom, radius, radius, bgcol)
-			writeString(gc, segment, fontsize, float64(x)+offset, baseline, fgcol)
-			x = x + textWidth + (2 * offset) + spacing
+			if i == len(code)-1 {
+				radiusRight = radius
+			}
+			width := renderSegment(gc, segment, x, badgeTop, badgeBottom, radiusLeft, radiusRight, fontsize, offset, baseline)
+			x = x + width + spacing
 		}
 	}
 
