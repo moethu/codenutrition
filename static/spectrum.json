@@ -11,7 +11,7 @@
             },
             {
                 "id": "O",
-                "desc": "We own it. But if you go out of business, you get the source code."
+                "desc": "We own it. But if we go out of business, you get the source code."
             },
             {
                 "id": "O-",
@@ -29,7 +29,7 @@
     },
     {
         "title": "Source Code",
-        "desc" : "How are you licensing your code?",
+        "desc" : "Are you giving access to your source code?",
         "content": [{
                 "id": "S++",
                 "desc": "The source code is public and you can change it."
