@@ -143,7 +143,6 @@ func escapedParam(c *gin.Context, param string) string {
 	value := template.HTMLEscapeString(c.Param(param))
 	if len(value) > 40 {
 		return ""
-	} else {
-		return value
 	}
+	return value
 }
