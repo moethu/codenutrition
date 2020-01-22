@@ -1,10 +1,10 @@
-# Code Nutrition Facts
+# Code Nutrition
 
-[![nutrition facts](http://code.grevit.net/badge/O%2B%2B_S%2B%2B_I%2B%2B_C_E_M_V%2B_PS%2B%2B_D%2B)](http://code.grevit.net/facts/O%2B%2B_S%2B%2B_I%2B%2B_C_E_M_V%2B_PS%2B%2B_D%2B)
+[![codenutrition](http://code.grevit.net/badge/O%2B%2B_S%2B%2B_I%2B%2B_C_E_M_V%2B_PS%2B%2B_D%2B)](http://code.grevit.net/facts/O%2B%2B_S%2B%2B_I%2B%2B_C_E_M_V%2B_PS%2B%2B_D%2B)
 
 **Imagine your code and all dependencies would carry nutrition labels.**
 
-Code Nutrition Facts is a service for labelling code so everybody can understand what they are getting into when building upon or using your software. The survey is based on a set of questions presented by Felix von Leitner: "Nützlich-Unbedenklich Spektrum" at 36C3 (Minor adjustmenst have been made to the original text.) [learn more here](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=2ahUKEwjE-v7ropLnAhXUwMQBHd68B9UQwqsBMAB6BAgKEAQ&url=https%3A%2F%2Fmedia.ccc.de%2Fv%2F36c3-10608-das_nutzlich-unbedenklich_spektrum&usg=AOvVaw1_05ix3-K_lRn_T9LbJRZi).
+Code Nutrition is a service for labelling code so everybody can understand what they are getting into when building upon or using your software. The survey is based on a set of questions presented by Felix von Leitner: "Nützlich-Unbedenklich Spektrum" at 36C3 (Minor adjustmenst have been made to the original text.) [learn more here](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=2ahUKEwjE-v7ropLnAhXUwMQBHd68B9UQwqsBMAB6BAgKEAQ&url=https%3A%2F%2Fmedia.ccc.de%2Fv%2F36c3-10608-das_nutzlich-unbedenklich_spektrum&usg=AOvVaw1_05ix3-K_lRn_T9LbJRZi).
 
 The survey itself is still under development you are welcome to discuss, contribute and improve it. Currently it consists of 9 fundamental questions regarding the state of your (legacy) code. After answering them by multiple choice the service generates an embeddable badge representing the state of your project. I highly reccommend completing the survey even if you don't want to use the badge - the questions asked can be very helpful.
 

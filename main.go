@@ -30,8 +30,8 @@ func main() {
 	}
 	operatingDir = dir
 
-	docs.SwaggerInfo.Title = "Code Nutrition Facts Service API"
-	docs.SwaggerInfo.Description = "Code Nutrition Facts Service"
+	docs.SwaggerInfo.Title = "Code Nutrition Service API"
+	docs.SwaggerInfo.Description = "Code Nutrition Service"
 	docs.SwaggerInfo.Version = "0.1"
 
 	flag.Parse()
