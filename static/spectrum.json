@@ -94,7 +94,7 @@
         "desc" : "How do you verify correctness?",
         "content": [{
                 "id": "C+++",
-                "desc": "We have a correctness proof and you can unsertand / verify it."
+                "desc": "We have a correctness proof and you can understand / verify it."
             },
             {
                 "id": "C++",
@@ -135,7 +135,7 @@
             },
             {
                 "id": "E",
-                "desc": "we try to detect bad arguments."
+                "desc": "We try to detect bad arguments."
             },
             {
                 "id": "E-",
@@ -155,12 +155,12 @@
             },
             {
                 "id": "!E",
-                "desc": "We do a daily AI malware scan of our blockchain."
+                "desc": "We do a daily AI malware scan of our Blockchain."
             }
         ]
     },
     {
-        "title": "Maintainance",
+        "title": "Maintenance",
         "desc" : "How do you maintain your code?",
         "content": [{
                 "id": "M!",
@@ -283,7 +283,7 @@
             },
             {
                 "id": "D---",
-                "desc": "Uses vendor specific lock-in APIs/feautres."
+                "desc": "Uses vendor specific lock-in APIs/features."
             }
         ]
     }
