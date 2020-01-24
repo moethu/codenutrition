@@ -2,8 +2,6 @@
 
 [![codenutrition](http://code.grevit.net/badge/O%2B%2B_S%2B%2B_I%2B%2B_C_E_M_V%2B_PS%2B%2B_D%2B_)](http://code.grevit.net/facts/O%2B%2B_S%2B%2B_I%2B%2B_C_E_M_V%2B_PS%2B%2B_D%2B)
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/moethu/codenutrition)](https://goreportcard.com/report/github.com/moethu/codenutrition)
-
 **Imagine your code and all dependencies would carry nutrition labels.**
 
 Code Nutrition is a service for labelling code so everybody can understand what they are getting into when building upon or using your software. The survey is based on a set of questions presented by Felix von Leitner: "Nützlich-Unbedenklich Spektrum" at 36C3 (Minor adjustmenst have been made to the original text.) [learn more here](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=2ahUKEwjE-v7ropLnAhXUwMQBHd68B9UQwqsBMAB6BAgKEAQ&url=https%3A%2F%2Fmedia.ccc.de%2Fv%2F36c3-10608-das_nutzlich-unbedenklich_spektrum&usg=AOvVaw1_05ix3-K_lRn_T9LbJRZi).
@@ -17,6 +15,8 @@ Again, the intention of this repo and the survey is to get the conversation star
 [Start your survey now](http://code.grevit.net)
 
 ## Requirements for building the service
+
+[![Go Report Card](https://goreportcard.com/badge/github.com/moethu/codenutrition)](https://goreportcard.com/report/github.com/moethu/codenutrition)
 
 - go 1.11.5+
 
