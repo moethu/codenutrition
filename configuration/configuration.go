@@ -1,0 +1,34 @@
+package configuration
+
+import (
+	"encoding/json"
+	"io/ioutil"
+	"log"
+	"os"
+)
+
+// Config struct for spectrum.json
+type Spectrum []struct {
+	Title   string `json:"title"`
+	Desc    string `json:"desc"`
+	Content []struct {
+		ID   string `json:"id"`
+		Desc string `json:"desc"`
+	} `json:"content"`
+}
+
+// readConfigJson returns spectrum.json configuration file from static dir
+func ReadConfigJson() Spectrum {
+	jsonFile, err := os.Open("static/spectrum.json")
+	if err != nil {
+		log.Println(err)
+	}
+	defer jsonFile.Close()
+
+	byteValue, _ := ioutil.ReadAll(jsonFile)
+
+	var result Spectrum
+	json.Unmarshal([]byte(byteValue), &result)
+
+	return result
+}
