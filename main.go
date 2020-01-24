@@ -15,6 +15,8 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
+	"github.com/moethu/codenutrition/badge"
+	"github.com/moethu/codenutrition/colormap"
 	"github.com/moethu/codenutrition/docs"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
@@ -23,6 +25,12 @@ import (
 
 // operatingDir current binary dir
 var operatingDir string
+
+// Data struct for facts route
+type Data struct {
+	Host string
+	Code string
+}
 
 func main() {
 	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
@@ -46,6 +54,8 @@ func main() {
 		ReadTimeout:  600 * time.Second,
 		WriteTimeout: 600 * time.Second,
 	}
+
+	colormap.Load()
 
 	router.Use(favicon.New("./static/favicon.ico"))
 	router.Static("/static/", "./static/")
@@ -103,12 +113,6 @@ func getImprint(c *gin.Context) {
 	t.Execute(c.Writer, "http://"+c.Request.Host)
 }
 
-// Data struct for facts route
-type Data struct {
-	Host string
-	Code string
-}
-
 // getFacts godoc
 // @Summary renders facts page
 // @Description renders facts page using code parameter string
@@ -132,7 +136,7 @@ func getFacts(c *gin.Context) {
 func getBadge(c *gin.Context) {
 	codelabel := escapedParam(c, "code")
 	segments := strings.Split(codelabel, "_")
-	image := getSVG(segments)
+	image := badge.GetSVG(segments)
 	c.Writer.Header().Set("Content-Type", "image/svg+xml")
 	c.Writer.Header().Set("Content-Length", strconv.Itoa(len(image)))
 	if _, err := c.Writer.Write(image); err != nil {
