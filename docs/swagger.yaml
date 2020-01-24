@@ -52,4 +52,15 @@ paths:
           schema:
             type: html
       summary: renders facts page
+  /imprint:
+    get:
+      description: renders imprint
+      produces:
+      - text/html
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: html
+      summary: renders imprint
 swagger: "2.0"

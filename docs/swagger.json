@@ -78,6 +78,23 @@
                     }
                 }
             }
+        },
+        "/imprint": {
+            "get": {
+                "description": "renders imprint",
+                "produces": [
+                    "text/html"
+                ],
+                "summary": "renders imprint",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "html"
+                        }
+                    }
+                }
+            }
         }
     }
 }
