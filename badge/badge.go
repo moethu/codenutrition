@@ -1,43 +1,34 @@
-package main
+package badge
 
 import (
 	"fmt"
 	"strings"
+
+	"github.com/moethu/codenutrition/colormap"
 )
 
-// standard colors for svg
-var svgGreen = "#28A745"
-var svgGrey = "#6C757D"
-var svgYellow = "#FFC107"
-var svgRed = "#DC3545"
-
-// getSVGColor returns badge background and foreground colors according to content
-func getSVGColor(code string) string {
-	if strings.Contains(code, "+") {
-		return svgGreen
-	}
-	if strings.Contains(code, "-") {
-		return svgRed
-	}
-	if strings.Contains(code, "!") {
-		return svgYellow
-	}
-	return svgGrey
+// cleanString strips +,- and ! from strings
+func cleanString(code string) string {
+	code = strings.Replace(code, "+", "", -1)
+	code = strings.Replace(code, "!", "", -1)
+	code = strings.Replace(code, "-", "", -1)
+	return code
 }
 
 // calulateTextWidth calculates text width for a string
 // TODO: calculation is not considering rendered character widths - needs to be improved
 func calulateTextWidth(text string) float64 {
-	return float64(len(text)) * 12.0
+	return float64(len(text)) * 14.0
 }
 
 // generateSVGSegment generates a SVG segment by position and text
 func generateSVGSegment(text string, x float64) (string, string, float64) {
-	w := calulateTextWidth(text)
-	bgcolor := getSVGColor(text)
+	strippedtext := cleanString(text)
+	w := calulateTextWidth(strippedtext)
+	bgcolor := colormap.Get(text)
 	background := fmt.Sprintf(`<path fill="%s" d="M%f 0h%fv20H%fz"/>`, bgcolor, x, x+w, x)
 	offset := w / 2
-	foreground := fmt.Sprintf(`<text x="%f" y="15" fill="#010101" fill-opacity=".3">%s</text><text x="%f" y="14">%s</text>`, x+offset, text, x+offset, text)
+	foreground := fmt.Sprintf(`<text x="%f" y="15" fill="#010101" fill-opacity=".3">%s</text><text x="%f" y="14">%s</text>`, x+offset, strippedtext, x+offset, strippedtext)
 	return background, foreground, w
 }
 
@@ -67,8 +58,8 @@ func generateSVGBadge(width float64, background, foreground string) string {
 	</svg>`, width, width, background, width, foreground)
 }
 
-// getSVG returns an svg badge
-func getSVG(code []string) []byte {
+// GetSVG returns an svg badge
+func GetSVG(code []string) []byte {
 	foreground := ""
 	background := ""
 	x := 90.0
