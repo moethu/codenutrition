@@ -55,7 +55,7 @@ func main() {
 		WriteTimeout: 600 * time.Second,
 	}
 
-	colormap.Load()
+	colormap.Load("")
 
 	router.Use(favicon.New("./static/favicon.ico"))
 	router.Static("/static/", "./static/")

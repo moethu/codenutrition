@@ -18,8 +18,11 @@ type Spectrum []struct {
 }
 
 // readConfigJson returns spectrum.json configuration file from static dir
-func ReadConfigJson() Spectrum {
-	jsonFile, err := os.Open("static/spectrum.json")
+func ReadConfigJson(path string) Spectrum {
+	if path == "" {
+		path = "static/spectrum.json"
+	}
+	jsonFile, err := os.Open(path)
 	if err != nil {
 		log.Println(err)
 	}

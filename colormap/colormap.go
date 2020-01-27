@@ -40,7 +40,7 @@ func lightenColor(inColor color.RGBA, f float64) color.RGBA {
 // getColorGradient adds a color gradient for a set of values to a colormap
 // it filters values by a char like +,- or ! and uses a basecolor to start from.
 // reverse will reverse the color gradient
-func getColorGradient(colormap map[string]string, values []string, char string, basecolor color.RGBA, reverse bool) map[string]string {
+func getColorGradient(colormap map[string]string, values []string, char string, basecolor color.RGBA, reverse bool) {
 	var data []string
 
 	for _, value := range values {
@@ -55,8 +55,6 @@ func getColorGradient(colormap map[string]string, values []string, char string, 
 	for i, value := range data {
 		colormap[value] = hexColor(lightenColor(basecolor, float64(i)*factor))
 	}
-
-	return colormap
 }
 
 // reverseArray creates an array in reverse order
@@ -86,8 +84,8 @@ func populateColorMap(colormap map[string]string, values []string) map[string]st
 
 // Load loads the colormap based on the configuration files
 // needs to be called first to initialize the colormap
-func Load() {
-	data := configuration.ReadConfigJson()
+func Load(path string) {
+	data := configuration.ReadConfigJson(path)
 	colormap := make(map[string]string)
 	for _, category := range data {
 		var values []string
