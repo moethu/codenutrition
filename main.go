@@ -18,6 +18,7 @@ import (
 	"github.com/moethu/codenutrition/badge"
 	"github.com/moethu/codenutrition/colormap"
 	"github.com/moethu/codenutrition/docs"
+	stats "github.com/semihalev/gin-stats"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 	"github.com/thinkerou/favicon"
@@ -56,13 +57,16 @@ func main() {
 	}
 
 	colormap.Load("")
-
+	router.Use(stats.RequestStats())
 	router.Use(favicon.New("./static/favicon.ico"))
 	router.Static("/static/", "./static/")
 	router.GET("/", getHome)
 	router.GET("/imprint", getImprint)
 	router.GET("/facts/:code", getFacts)
 	router.GET("/badge/:code", getBadge)
+	router.GET("/stats", func(c *gin.Context) {
+		c.JSON(http.StatusOK, stats.Report())
+	})
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	log.Println("Starting HTTP Server on Port", port)
 
