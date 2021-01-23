@@ -12,7 +12,7 @@ The survey itself is still under development you are welcome to discuss, contrib
 
 Again, the intention of this repo and the survey is to get the conversation started and potentially develop a solid metric representing the state of a project.
 
-[Start your survey now](http://code.grevit.net)
+[Start your survey now](http://code.grevit.net:8084)
 
 ## Requirements for building the service
 
